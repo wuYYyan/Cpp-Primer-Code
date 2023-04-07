@@ -1,0 +1,28 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Compile", // 任务名称，与launch.json的preLaunchTask相对应
+            "command": "g++", // 要使用的编译器，可以是绝对路径。如果编译失败，改成gcc或g++试试，还有问题那就是你自己的代码有错误
+            "args": [
+                "-g", // 生成和调试有关的信息
+                "${file}", // 如果要全部编译生成该项目中的所有cpp文件，该项改为："${workspaceFolder}\\*.cpp"
+                "-o", // 指定输出文件名，不加该参数则默认输出a.exe，Linux下默认a.out
+                "${fileDirname}/${fileBasenameNoExtension}.exe",
+                //"-Wall", // 开启额外警告
+                "-static-libgcc", // 静态链接libgcc，一般都会加上
+            ], // 编译命令参数
+            "type": "process", // process是vsc把预定义变量和转义解析后直接全部传给command；shell相当于先打开shell再输入命令，所以args还会经过shell再解析一遍
+            "group": {
+                "kind": "build",
+                "isDefault": true // 为true时指定当您按Ctrl+Shift+B时将运行此任务，为false时手动在菜单中使用 终端》运行任务》Compile 来运行
+            },
+            "presentation": {
+                "echo": true,
+                "reveal": "always", // 执行任务时是否跳转到终端面板，可以为always，silent，never。具体参见VSC的文档
+                "focus": false, // 设为true后可以使执行task时焦点聚集在终端，但对编译C/C++来说，设为true没有意义
+                // "panel": "new" // 如果设置为new，每次调试运行都会新建一个终端，不会被重用，但是会有占用情况，需要先结束上一个运行才可以运行下一个。
+            },
+        }
+    ]
+}
