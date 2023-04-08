@@ -9,4 +9,4 @@ int main()
     ofstream ofs("c2_2.txt", fstream::out | fstream::app); //模式为输出和追加
 
     return 0;
-}
+} 
