@@ -14,6 +14,13 @@ int main()
 
     arr1 = arr2; //类型相同的array可以相互赋值，array的类型包括元素类型与容器大小
     arr2 = {1}; //可以使用花括号列表为array赋值
-
+    
+    if(arr1 > arr2)
+        cout << "arr1 > arr2" << endl;
+    else if(arr1 < arr2) //通过比较array中的第二个元素得出大小关系
+        cout << "arr1 < arr2" << endl;
+    else
+        cout << "arr1 = arr2" << endl;
+ 
     return 0;
 }
