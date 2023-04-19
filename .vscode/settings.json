@@ -77,9 +77,12 @@
         "sstream": "cpp",
         "complex": "cpp",
         "valarray": "cpp",
-        "map": "cpp"
+        "map": "cpp",
+        "stdio.h": "c"
     },
     "cSpell.words": [
+        "DTFT",
+        "DTFTR",
         "gmean",
         "hmean",
         "nbad",
