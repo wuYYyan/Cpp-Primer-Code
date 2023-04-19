@@ -31,6 +31,7 @@ double complex DTFT(int L, double *x, double W)
         //X = cadd(cmplx(x[n], 0), cmul(z, X)); //cadd 与 cmul 根本不是库函数
         X = (x[n] + 0 * I) + (z * X); //复数的四则运算方法同实数
     }
+    //从循环求解过程来看，加窗序列中的任何一点都会影响该点的频谱密度值
 
     return X;
 }
