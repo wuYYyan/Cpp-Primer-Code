@@ -25,16 +25,19 @@ int findSingleNumber(vector<int> v)
         cout << r << " ";
     cout << endl;
     */
+
     int n = v.size();
     int i, j;
-    for(i = 0, j = 0; j < n; j ++)
+    for(i = 0, j = 0; j < n; i = j)
     {
-        if(v[i] != v[j])
+        int num = 0;
+        while(v[i] == v[j])
         {
-            if(j - i == 1)
-                return v[i];
-            i = j;
+            j++;
+            num ++;
         }
+        if(num == 1)
+            return v[i];
     }
-    return v[j];
+    return v[i];
 }
