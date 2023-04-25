@@ -6,7 +6,7 @@ char *FormatString(const char *str);
 
 int main()
 {
-    char *str = "aaabbbbccccc"; // 将给定字符串转换为a3b4c5
+    char *str = "aaabbbbccccc"; // 要求：将给定字符串转换为a3b4c5
     puts(FormatString(str));
 
     return 0;
@@ -15,7 +15,8 @@ int main()
 char *FormatString(const char *str)
 {
     int n = strlen(str); //strlen计算字符串长度时不包括'\0'
-    char *s = (char *)malloc(2 * n + 1); // 申请内存空间
+    char *s = (char *)malloc(2 * n + 1); //申请内存空间
+    //最坏情况下字符串中不含重复字符，需要2n个空间，再加上末尾的结束符'\0'，共2n+1个空间
     
     if(s != NULL)
     {
