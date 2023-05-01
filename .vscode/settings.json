@@ -78,7 +78,10 @@
         "complex": "cpp",
         "valarray": "cpp",
         "map": "cpp",
-        "stdio.h": "c"
+        "stdio.h": "c",
+        "forward_list": "cpp",
+        "list": "cpp",
+        "unordered_set": "cpp"
     },
     "cSpell.words": [
         "DTFT",
