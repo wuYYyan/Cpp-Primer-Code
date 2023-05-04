@@ -1,3 +1,4 @@
+//给定一个递增数组与目标值，要求返回数组中两元素和为目标值的元素下标
 #include <iostream>
 
 using namespace std;
