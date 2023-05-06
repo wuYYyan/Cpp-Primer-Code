@@ -89,6 +89,7 @@
         "gmean",
         "hmean",
         "nbad",
+        "RAII",
         "stringlow",
         "stringup",
         "struct",
