@@ -1,3 +1,4 @@
+// 本程序编译没通过，但不知道啥原因草了
 #include <iostream>
 #include <memory>
 #include <vector>
@@ -25,7 +26,7 @@ class StrBlob
         string &back();
         const string &front() const;
         const string &back() const;
-        StrBlobPtr begin() { return StrBlobPtr(*this); }
+        StrBlobPtr begin() {return StrBlobPtr(*this);}
         StrBlobPtr end();
 };
 
@@ -71,21 +72,23 @@ const string &StrBlob::back() const
 
 StrBlobPtr StrBlob::end()
 {
-    auto ret = StrBlobPtr(*this, data->size());
+    auto ret = StrBlobPtr(*this, data->size()); //调用构造函数
     return ret;
 }
 
 //伴随指针类具体指向底层容器中的某个元素，而不是指向容器本身
 class StrBlobPtr
 {
+    friend class StrBlob;
     private:
         weak_ptr<vector<string>> wptr;
         vector<string>::size_type curr;
-        shared_ptr<vector<string>> check(vector<string>::size_type, const string &msg) const; //注意返回类型
+        shared_ptr<vector<string>> check(vector<string>::size_type i, const string &msg) const; //检查是否超出范围，注意返回类型
     public:
-        StrBlobPtr() : curr(0) {}
+        StrBlobPtr() : curr(0) {} //默认构造函数
         StrBlobPtr(StrBlob &a, size_t sz = 0) : wptr(a.data), curr(sz) {}
         //这个构造函数的写法不允许将一个StrBlob对象的引用赋值给StrBlobPtr对象，因此形参是非 const 类型的
+        //这个构造函数要使用StrBlob对象的data私有成员，因此必须是StrBlob类的友元类
         string &deref() const; //解引用
         StrBlobPtr &incr(); //前缀递增
 };
@@ -104,7 +107,7 @@ shared_ptr<vector<string>> StrBlobPtr::check(vector<string>::size_type i, const 
 string &StrBlobPtr::deref() const
 {
     auto p = check(curr, "dereference past end"); //检查vector是否还存在
-    return (*p)[curr]; //(*p)是对象所指向的vector
+    return (*p)[curr]; //(*p)是对象所指向的vector，然后再使用vector访问元素的方式
     //智能指针p的类型是shared_ptr<vector<string>>
 }
 

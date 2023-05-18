@@ -1,3 +1,4 @@
+// 本程序编译没通过，但不知道啥原因草了
 #include <iostream>
 #include <memory>
 #include <vector>
@@ -81,7 +82,7 @@ class StrBlobPtr
     private:
         weak_ptr<vector<string>> wptr;
         vector<string>::size_type curr;
-        shared_ptr<vector<string>> check(vector<string>::size_type, const string &msg) const;
+        shared_ptr<vector<string>> check(vector<string>::size_type i, const string &msg) const;
     public:
         StrBlobPtr() : curr(0) {}
         StrBlobPtr(const StrBlob &a, size_t sz = 0) : wptr(a.data), curr(sz) {}
