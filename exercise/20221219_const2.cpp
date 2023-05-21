@@ -8,7 +8,7 @@ int main()
 {
     int n = 10;
     int m = 100;
-    const int *pt = &n; //指向const char类型变量的指针
+    const int *pt = &n; //指向const int类型变量的指针
 
     cout << "1):n = " << n << endl;
 
