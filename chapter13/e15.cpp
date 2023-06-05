@@ -21,7 +21,7 @@ void f(numbered s)
 
 int main()
 {
-    numbered a, b = a, c = b; //b、c的初始化调用自定义拷贝构造函数
+    numbered a, b = a, c = b; //b、c的初始化调用自定义拷贝构造函数，手动增加static数据成员，然后赋值给每个对象自身的mysn数据成员
     f(a); //按值传递参数调用自定义拷贝构造函数，下同
     f(b);
     f(c);
