@@ -22,8 +22,8 @@ int main()
     func(q, sizeof(q));
 
     cout << "1) x = " << x << endl;
-    cout << "2) x = " << sizeof(x++) << endl;
-    cout << "3) x = " << x << endl; //sizeof运算符并不实际计算其运算对象的值
+    cout << sizeof(x++) << endl;
+    cout << "2) x = " << x << endl; //sizeof运算符并不实际计算其运算对象的值
 
     cout << sizeof(p) << endl; //输出8，其中的指针无需有效
 

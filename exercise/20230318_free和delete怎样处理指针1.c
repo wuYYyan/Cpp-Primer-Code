@@ -8,6 +8,9 @@ int main()
     char *p = (char *)malloc(100);
     strcpy(p, "wuyan");
     printf("p = %s\n", p);
+    printf("sizeof(p) = %d\n", (int)sizeof(p)); //计算指针p本身所占内存空间的大小，而不是p所指向的内存空间的大小
+    printf("strlen(p) = %d\n", (int)strlen(p)); //strlen()本质上是一个函数
+
 
     free(p); //free()本质上是一个函数
     printf("p = %s\n", p);
@@ -20,6 +23,9 @@ int main()
     //而对指向该内存空间的指针不做销毁处理，所以还能再对其赋值
     //但是这种做法并不安全，指针有可能指向无法访问的空间，所以进行如下操作
     p = NULL;
+
+    // new：对象构造、内存分配、返回指针
+    // delete：对象析构、内存释放、注意并不销毁指针
         
 
     return 0;

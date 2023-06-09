@@ -15,7 +15,7 @@ class HasPtr
 int main()
 {
     HasPtr hp1("hello world");
-    HasPtr hp2(hp1); //¿½±´¹¹Ôìº¯Êý
+    HasPtr hp2(hp1);
 
 
     return 0; 

@@ -5,7 +5,7 @@ using namespace std;
 class numbered
 {
     private:
-        static int id;
+        static int id; //静态成员变量，不依赖于任何对象，而属于整个类
     public:
         int mysn;
         numbered() { mysn = id++; }
