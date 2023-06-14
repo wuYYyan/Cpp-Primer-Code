@@ -47,7 +47,7 @@ int main()
     A *pa = new A(a); //拷贝构造函数
     delete pa; //析构函数
 
-    vector<A> vec;
+    vector<A> vec(3); //这只会调用默认构造函数，不会调用拷贝构造函数
     vec.push_back(a); //拷贝构造函数
 
     return 0; //对a调用析构函数，对vec中的元素调用析构函数
