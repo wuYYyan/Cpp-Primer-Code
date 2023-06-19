@@ -15,7 +15,7 @@ class String
 
     public:
     /*
-    一般成员函数的声明遵循如下顺序：静态成员函数 -> 默认构造函数 -> 复制构造函数 -> 传参构造函数 -> 析构函数
+    一般成员函数的声明遵循如下顺序：静态成员函数 -> 默认构造函数 -> 复制构造函数 -> 传参/转换构造函数 -> 析构函数
     -> 内联函数 -> 一般成员函数 -> 重载运算符成员函数 -> 友元函数
     */
 
@@ -26,7 +26,7 @@ class String
         // 构造函数的定义中注意更新所有受影响的静态成员变量(num_strings)
         String(); //默认构造函数中如果有形参则必须全部带有默认参数，否则不能有任何一个形参
         String(const char *s); //有参构造函数，没有带默认参数，因此绝对不是默认构造参数
-        String(const String &st); //重新声明复制构造函数
+        String(const String &st); //重新声明复制构造函数(又称为拷贝构造函数)
         // 成员函数返回对象(而不是对象的引用)时会调用复制构造函数创建匿名对象
         ~String(); //使用关键字new动态分配内存时必须显式调用析构函数释放内存
 
@@ -56,7 +56,7 @@ class String
         // 而又因为ostream/istream类没有公有的复制构造函数，因此必须返回对象引用
         friend ostream &operator<<(ostream &os, const String &st);
         friend istream &operator>>(istream &is, String &st);
-        // 重载输入运算符时一定会涉及到修改对象，因此不能加const 
+        // 重载输入运算符时一定会涉及到修改对象，因此要读入的对象不能用const修饰 
 
         // 为了保持加号使用时的交换律，需要用成员函数与非成员函数重载两次
         // 用来连接的两个字符串(或字符)在计算过程中保持不变，因此要用const限定
@@ -185,7 +185,7 @@ bool operator<(const String &str1, const String &str2)
 
 bool operator>(const String &str1, const String &str2)
 {
-    return str2 > str1; //用到成员函数中<运算符的重载
+    return str2 < str1; //用到成员函数中<运算符的重载
 }
 
 bool operator==(const String &str1, const String &str2)

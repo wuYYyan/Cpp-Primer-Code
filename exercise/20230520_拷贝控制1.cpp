@@ -48,7 +48,10 @@ int main()
     delete pa; //析构函数
 
     vector<A> vec(3); //这只会调用默认构造函数，不会调用拷贝构造函数
-    vec.push_back(a); //拷贝构造函数
+    cout << "Size = " << vec.size() << ", Capacity = " << vec.capacity() << endl;
+    // 在对vector进行扩容的过程中，新的内存空间中的元素从旧内存空间中的元素拷贝构造而来，然后再调用析构函数将旧内存空间中的元素析构掉
+    vec.push_back(a); //拷贝构造函数，或者是用【花括号列表】初始化一个数组中的元素才会调用拷贝构造函数
+    cout << "Size = " << vec.size() << ", Capacity = " << vec.capacity() << endl;
 
     return 0; //对a调用析构函数，对vec中的元素调用析构函数
 }
