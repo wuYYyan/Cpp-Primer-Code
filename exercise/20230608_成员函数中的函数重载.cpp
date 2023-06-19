@@ -6,7 +6,7 @@ using namespace std;
 class HasPtr
 {
     public:
-        HasPtr() {}
+        HasPtr() {} //默认构造函数
 
         // 当形参是某种类型的引用时，通过区分常量引用还是非常量引用构成重载
         // HasPtr(string &s = string()) : ps(new string(s)), i(0) { } //形参给定默认时生成的临时变量为右值，而引用类型的变量为左值，左值无法绑定到右值。所以会报错

@@ -12,4 +12,8 @@ int main()
 
     a += b;
     cout << "a = " << a << endl;
+
+    int i = 1;
+    int &j = i;
+    int &k = j;
 }
