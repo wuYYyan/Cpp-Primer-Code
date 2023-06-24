@@ -99,6 +99,8 @@
         "punc",
         "RAII",
         "RTTI",
+        "STRBLOB",
+        "STRBLOBPTR",
         "stringlow",
         "stringup",
         "struct",
