@@ -138,7 +138,7 @@ StrBlobPtr StrBlobPtr::operator++(int)
     return ret;
 }
 
-StrBlobPtr StrBlobPtr::operator++(int)
+StrBlobPtr StrBlobPtr::operator--(int)
 {
     StrBlobPtr ret = *this; //记录原值并返回
     --*this; //调用前置递减运算符

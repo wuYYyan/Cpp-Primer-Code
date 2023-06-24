@@ -41,7 +41,7 @@ class StrBlobPtr
 
         // 后置递增递减运算符返回对象的原值(递增或递减之前的值)
         StrBlobPtr operator++(int);
-        StrBlobPtr operator++(int);
+        StrBlobPtr operator--(int);
 
         // 重载加法和减法运算符
         StrBlobPtr &operator+=(size_t n);

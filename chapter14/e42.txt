@@ -1,0 +1,13 @@
+在使用如下格式时，记得声明命名空间placeholders
+
+a)
+ vector<int> vec;
+ count_if(vec.begin(), vec.end(), bind(greater<int>(), _1, 1024));
+
+b)
+ vector<string> vec;
+ find_if(vec.begin(), vec.end(), bind(not_equal_to<string>(), _1, "pooh"));
+
+c)
+ vector<int> vec;
+ transform(vec.begin(), vec.end(), vec.begin(), bind(multiplies<int>(), _1, 2));
