@@ -17,7 +17,7 @@ struct B
 int main()
 {
     printf("size of struct A = %llu\n", sizeof(struct A)); //8
-    printf("size of struct A = %llu\n", sizeof(struct B)); //12
+    printf("size of struct B = %llu\n", sizeof(struct B)); //12
 
     /*
     结构体大小的计算要遵循结构体内存对齐规则(暂不考虑结构体的嵌套问题)：
