@@ -1,5 +1,5 @@
 //日期：20221219 
-//内容：常量指针
+//内容：指针常量
 #include <iostream>
 
 using namespace std;
