@@ -33,10 +33,10 @@ class SharedPtr
         {
             std::cout << "operator=" << std::endl;
 
-            if (_pPtr != sp._pPtr)
+            if (_pPtr != sp._pPtr) //防止自赋值
             {
                 std::cout << "operator= will call release" << std::endl;
-                release(); //释放管理的旧内存资源
+                release(); //释放赋值运算符左侧的智能指针管理的旧内存资源
                 _pPtr = sp._pPtr;
                 _pRefCount = sp._pRefCount;
                 _pMutex = sp._pMutex;
@@ -72,7 +72,7 @@ class SharedPtr
             _pMutex->unlock(); 
         }
 
-        void release() //计数器加1
+        void release() //计数器减1，为0时释放资源
         {
             std::cout << "release, current _RefCount " << *_pRefCount << std::endl;
 
@@ -120,11 +120,12 @@ int main(int argc, char* argv[]) {
 
 	SharedPtr<Test> originPtr(new Test());
     // new运算符：构造对象(调用构造函数)、分配内存(返回指向对象的指针)
-    // 然后再调用智能指针模板类的构造函数，实例化模板类对象
+    // 然后再将该指向对象的指针按值传递给智能指针模板类的构造函数，实例化模板类对象(第二次分配内存)
 
 	std::cout << "will call doSomeTest" << std::endl;
 
 	doSomeTest(originPtr); //按值传递参数，调用拷贝构造函数
+    // shared_ptr 类型允许拷贝构造与拷贝赋值，但是拷贝后的所有对象都指向同一块内存，这样会导致引用计数的错误
 
 	std::cout << "main end" << std::endl;
 
@@ -133,7 +134,7 @@ int main(int argc, char* argv[]) {
 
 void doSomeTest(SharedPtr<Test> pTest) {
 	std::cout << "doSomeTest call" << std::endl;
-	SharedPtr<Test> pInnerTest = pTest; //拷贝构造函数
+	SharedPtr<Test> pInnerTest = pTest; //拷贝构造函数执行初始化
     // 作用相当于SharePtr<Test> pInnerTest(pTest)
 	
 	std::cout << "will make an emptyPtr" << std::endl;
@@ -142,7 +143,7 @@ void doSomeTest(SharedPtr<Test> pTest) {
 	pInnerTest2 = pTest;
     //这种先创建变量再赋值的写法才会用到拷贝赋值运算符=
 
-	pInnerTest->printSomething();//当这个函数执行结束，pTest和pInnerTest的生命周期就会结束，会调用析构
+	pInnerTest->printSomething();//当doSomeTest函数执行结束，pTest和pInnerTest的生命周期就会结束，会调用析构
     // 等价写法：pInnerTest.operator->()->printSomething();
 
 	std::cout << "will make one test" << std::endl;

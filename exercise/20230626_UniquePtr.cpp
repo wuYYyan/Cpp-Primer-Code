@@ -65,7 +65,7 @@ class UniquePtr
                 throw std::invalid_argument("An invalid pointer was passed, resources will not be swapped");
 
             delete ptr_resource;
-            ptr_resource = nullptr; //显式地讲指针置为空
+            ptr_resource = nullptr; //显式地将指针置为空
             std::swap(ptr_resource, resource_ptr);
         }
 
@@ -133,7 +133,7 @@ private:
 // 主程序入口
 int main(int argc, char* argv[]) {
     UniquePtr<Test> tPtr1(new Test());
-    // 以下这两句话，编译就不通过，因为已经定义 UniquePtr& operator=(const UniquePtr&) noexcept = delete;
+    // 以下这两句话，编译就不通过，因为已经禁用了拷贝构造函数和拷贝赋值运算符
     // UniquePtr<Test> tPtr2 = tPtr1;
     // UniquePtr<Test> tPtr3(tPtr1);
     
@@ -141,9 +141,8 @@ int main(int argc, char* argv[]) {
     UniquePtr<Test> tPtr2(std::move(tPtr1));
     UniquePtr<Test> tPtr3 = std::move(tPtr2);
 
-    // tPtr1->printResource();//这一句就崩溃，因为tPtr1非空，只不过资源完全不能用了
+    // tPtr1->printResource();//这一句就崩溃，因为tPtr1非空，但其所拥有的资源完全不能用了
     tPtr1->printSomething(); //这一句不崩溃，tPtr1虽然资源不能用，但是代码段可以调用，只要代码段没有使用到资源
-
 
     PUser* pUser = new PUser();
     pUser->userTest();
