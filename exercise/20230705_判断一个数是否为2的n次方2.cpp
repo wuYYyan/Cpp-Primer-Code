@@ -5,6 +5,8 @@
 // 使用judge函数判断num是否为2的幂次方
 int judge(int n)
 {
+	if (n <= 0)
+		return 0;
 	if ((n & (n - 1)) == 0)
 		return 1;
 	else
