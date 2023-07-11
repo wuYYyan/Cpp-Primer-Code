@@ -19,13 +19,20 @@ int main()
 
     // 这一组依次向后偏移20字节
     cout << n << endl;
+    cout << n[0] << endl;
     cout << n + 1 << endl;
+    cout << (n + 1)[0] << endl;
     cout << n + 2 << endl;
+    cout << (n + 2)[0] << endl;
+
+    cout << "-------------------" << endl;
 
     cout << &n[0] << endl;
     cout << &n[0][0] << endl;
     cout << &n[0] + 1 << endl;
     cout << &n[0][0] + 1 << endl;
+    cout << &n[0] + 2 << endl;
+    cout << &n[0][0] + 2 << endl;
 
     cout << "-------------------" << endl;
 
@@ -56,6 +63,7 @@ int main()
     cout << *(&n[0] + 1)[1] << endl;
     cout << *(&n[1])[1] << endl;
     cout << *(&n)[1] << endl; //这里的&n是指向整个二维数组的指针，因此*(&n)[1]相比&n向后偏移100字节
+    cout << *(&n[0])[1] << endl;
     cout << n[2][0] << endl;
 
     return 0;
