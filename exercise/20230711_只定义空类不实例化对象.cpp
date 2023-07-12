@@ -3,10 +3,13 @@ using namespace std;
  
 class Empty_one //生成1字节的占位符
 {
+    
 };
 
 class Empty_two //生成1字节的占位符
-{};
+{
+
+};
 
 class Empty_three  //指向虚函数的指针，8字节
 {

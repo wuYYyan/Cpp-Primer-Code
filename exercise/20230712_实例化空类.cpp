@@ -12,7 +12,7 @@ class Empty
 class Empty
 {
   public:
-    Empty();                            //缺省构造函数
+    Empty();                            //构造函数
     Empty(const Empty &rhs);            //拷贝构造函数
     ~Empty();                           //析构函数 
     Empty& operator=(const Empty &rhs); //拷贝赋值运算符
@@ -24,9 +24,9 @@ class Empty
 int main()
 {
     // 实例化一个空类的对象之后，上述六个成员函数都会被统一创建，即使什么也不做
-    Empty *e = new Empty();    //缺省构造函数
+    Empty *e = new Empty();    //默认构造函数
     delete e;                  //析构函数
-    Empty e1;                  //缺省构造函数                               
+    Empty e1;                  //默认构造函数                               
     Empty e2(e1);              //拷贝构造函数
     e2 = e1;                   //拷贝赋值运算符
     Empty *pe1 = &e1;          //取址运算符(非const)
@@ -39,10 +39,12 @@ int main()
 /*
 inline Empty::Empty()                          //缺省构造函数
 {
+
 }
 
 inline Empty::~Empty()                         //析构函数
 {
+    
 }
 
 inline Empty *Empty::operator&()               //取址运算符(非const)
