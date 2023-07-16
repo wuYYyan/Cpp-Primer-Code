@@ -1,4 +1,6 @@
 #include <iostream>
+#include <vector>
+#include <memory>
 
 using namespace std;
 
@@ -49,13 +51,19 @@ double print_total(ostream &os, const Quote &item, size_t n);
 
 int main()
 {
-    Quote q("123", 10);
-    // Disc_quote dq("123", 10, 10, 0.1); //不允许使用抽象基类的对象
-    Disc_quote *dq; //允许定义抽象基类的指针
-    Bulk_quote bq("123", 10, 10, 0.1);
+    vector<shared_ptr<Quote>> basket; //300
+    // vector<Quote> basket; // 600
 
-    print_total(cout, q, 20);
-    print_total(cout, bq, 20);
+    for (size_t i = 0; i != 10; i ++)
+    {
+        basket.push_back(make_shared<Bulk_quote>("C++ Primer 5th", 6, 5, 0.5));
+    }
+    double sum = 0;
+    for (const auto & b : basket)
+    {
+        sum += b->net_price(10);
+    }
+    cout << sum << endl;
     
     return 0;
 }

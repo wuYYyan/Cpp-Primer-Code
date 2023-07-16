@@ -17,7 +17,7 @@ class Empty_three  //指向虚函数的指针，8字节
 };
 
 // 继承其父类Empty_three的虚指针，8字节，同时取消占位符
-class Empty_four :  public Empty_two, public Empty_three
+class Empty_four : public Empty_two, public Empty_three
 {
 };
  
