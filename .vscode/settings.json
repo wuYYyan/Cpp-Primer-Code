@@ -89,6 +89,7 @@
         "alloc",
         "binops",
         "childthread",
+        "constexpr",
         "deallocate",
         "decltype",
         "deque",
