@@ -8,6 +8,7 @@ int main()
 {
     priority_queue<int> heap1; //优先队列默认定义是大根堆，即堆顶元素是其中最大元素
     priority_queue<int, vector<int>, greater<int>> heap2;
+    // 通过传入第三个模板参数，可以实现小根堆，即堆顶元素是其中最小元素
 
     //向堆中插入元素
     heap1.push(1);
