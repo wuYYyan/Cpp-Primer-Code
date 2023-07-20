@@ -1,6 +1,6 @@
 #include <iostream>
 #include <unordered_set>
-// #include <unordered_multiset>
+// #include <unordered_multiset> //都包含在头文件unordered_set中
 
 struct Foo
 {
@@ -29,7 +29,7 @@ int main(int argc, char const *argv[])
     s.insert({"42",42});
     s.insert({"1024",1024});
 
-    // std::unordered_set<Foo> s2; //使用自定义数据类型时必须重载哈希函数
+    // std::unordered_set<Foo> s2; //使用自定义数据类型时必须重载哈希函数，否则语法是非法的
 
     return 0;
 }
