@@ -107,6 +107,7 @@
         "hmean",
         "ifile",
         "logn",
+        "lpthread",
         "memfcn",
         "multiset",
         "myref",
