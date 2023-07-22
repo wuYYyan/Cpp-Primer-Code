@@ -11,7 +11,7 @@ class Empty_two //生成1字节的占位符
 
 };
 
-class Empty_three  //指向虚函数的指针，8字节
+class Empty_three  //指向虚函数的指针，即虚指针，8字节
 {
     virtual void fun() = 0;
 };
