@@ -43,7 +43,7 @@ class Five
 int main()
 {
     cout << "sizeof(One): " << sizeof(One) << endl; //1，系统为空类生成一字节的占位符
-    cout << "sizeof(Two): " << sizeof(Two) << endl; //1，非虚函数不生成虚指针
+    cout << "sizeof(Two): " << sizeof(Two) << endl; //1，非虚函数不生成虚指针，仍然还是只有一字节的占位符
     cout << "sizeof(Three): " << sizeof(Three) << endl; //8,通过虚指针指向的虚表调用虚函数
     cout << "sizeof(Four): " << sizeof(Four) << endl; //8，不管有几个虚函数都只有一个虚指针，虚函数的增加只会扩充虚表
     cout << "sizeof(Five): " << sizeof(Five) << endl; //16，涉及到内存对齐问题

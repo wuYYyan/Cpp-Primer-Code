@@ -132,6 +132,7 @@
         "Valgrind",
         "vptr",
         "vtable",
+        "vtbl",
         "wptr",
         "wuyan"
     ], // 默认为false，效果是鼠标选中一块代码后可以单独执行，但C/++是编译型语言，不能这样用
