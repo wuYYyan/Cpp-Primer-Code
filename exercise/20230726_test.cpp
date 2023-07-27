@@ -27,6 +27,6 @@ int main(){
     {
         n -= k; // n = n - k;
         k += 1; // k = k + 1;
-        sum = sum + ;
+        sum = sum;
     }
 }
