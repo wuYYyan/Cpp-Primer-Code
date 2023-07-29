@@ -121,6 +121,7 @@
         "pbar",
         "punc",
         "RAII",
+        "realloc",
         "rodata",
         "RTTI",
         "sharedptr",
