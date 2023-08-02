@@ -96,6 +96,7 @@
         "alloc",
         "binops",
         "childthread",
+        "chrono",
         "constexpr",
         "deallocate",
         "decltype",
