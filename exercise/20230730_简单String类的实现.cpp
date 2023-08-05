@@ -24,7 +24,7 @@ ostream& operator<<(ostream& os, const String& str)
     return os;
 }
 
-inline String::String(const char* str)
+inline String::String(const char* str) // 函数定义时不再需要写出默认参数
 {
     if (str)
     {
@@ -35,7 +35,7 @@ inline String::String(const char* str)
     else
     {
         m_data = new char[1];
-        *m_data = '\0';
+        *m_data = '\0'; // 手动补上末尾的结束符
     }
 }
 

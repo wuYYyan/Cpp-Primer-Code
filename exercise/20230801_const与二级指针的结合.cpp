@@ -9,7 +9,7 @@ int* const * <==   int**        正确
 
 注意：const与二级指针的结合，左右都不能多或少const，否则都是错误的
 int**        <==   const int**  错误
-const int**  <==   int*         错误
+const int**  <==   int**        错误
 */
 #include <iostream>
 
