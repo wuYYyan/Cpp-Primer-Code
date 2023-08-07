@@ -22,9 +22,13 @@ int main()
 
     vector<int> ivec = {1, 2, 3, 4, 5};
 
-    ivec.insert(ivec.end(), ivec.begin(), ivec.end());
-    ivec.insert(ivec.begin(), ivec.begin(), ivec.end());
-    ivec.emplace(ivec.end(), 10);
+    // ivec.insert(ivec.end(), ivec.begin(), ivec.end());
+    // ivec.insert(ivec.begin(), ivec.begin(), ivec.end());
+    // ivec.emplace(ivec.end(), 10);
+
+    // 可以通过迭代器的加减操作到达指定位置
+    // 例如想要在容器的第三个元素前面插入一个元素10
+    ivec.insert(ivec.begin() + 2, 10);
 
     for (const auto &i : ivec)
         cout << i << " "; 
