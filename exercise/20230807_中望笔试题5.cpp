@@ -12,7 +12,7 @@ using namespace std;
 class Solution
 {
     public:
-        int m, n, res;
+        int m, n;
         int dir[4][2] = {0, 1, 0, -1, 1, 0, -1, 0};
 
         bool islegal(int x, int y)
