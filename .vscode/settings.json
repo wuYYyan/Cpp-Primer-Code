@@ -125,6 +125,8 @@
         "ifile",
         "ifndef",
         "islegal",
+        "linkinsert",
+        "Linklist",
         "logn",
         "lpthread",
         "memfcn",
