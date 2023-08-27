@@ -1,4 +1,5 @@
 #include <stdlib.h>
+#include <stdio.h>
 
 struct A
 {
@@ -14,10 +15,26 @@ struct B
     char b; //对齐数为1
 };
 
+struct C
+{
+    char a; //对齐数为1
+    int *p; //对齐数为8
+    int c; //对齐数为4
+};
+
+struct D
+{
+    char a; //对齐数为1
+    int b; //对齐数为4
+    int *q; //对齐数为8
+};
+
 int main()
 {
     printf("size of struct A = %llu\n", sizeof(struct A)); //8
     printf("size of struct B = %llu\n", sizeof(struct B)); //12
+    printf("size of struct C = %llu\n", sizeof(struct C)); //24
+    printf("size of struct D = %llu\n", sizeof(struct D)); //16
 
     /*
     结构体大小的计算要遵循结构体内存对齐规则(暂不考虑结构体的嵌套问题)：

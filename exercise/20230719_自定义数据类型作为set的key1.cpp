@@ -12,6 +12,12 @@ struct Foo
         return val < o.val;
     }
 
+    // 不可以使用重载>运算符代替，因为编译会报错
+    // bool operator>(const Foo& o) const
+    // {
+    //     return val > o.val;
+    // }
+
     // 必须同时重载 < 和 == 运算符，否则功能不完整，但编译不一定报错
     // bool operator==(const Foo& o) const
     // {
@@ -21,7 +27,7 @@ struct Foo
 
 int main(int argc, char const *argv[])
 {
-    // 方法一：必须在自身类内重载<运算符，默认实现从小到大排序
+    // 方法一：必须在自身类内重载<运算符，【默认实现从小到大排序】
     // 虽然不允许key重复，但是允许value重复，而且也不需要重载==运算符(C++ Primer P378)
     std::set<Foo> s1;
     s1.insert(Foo(1024));
