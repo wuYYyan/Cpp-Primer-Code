@@ -7,7 +7,7 @@ int judge(int n)
 {
 	if (n <= 0)
 		return 0;
-	if ((n & (n - 1)) == 0)
+	if ((n & (n - 1)) == 0) // 根据2的n次幂的二进制表达的特点
 		return 1;
 	else
 		return 0;

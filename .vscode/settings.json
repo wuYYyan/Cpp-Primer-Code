@@ -158,6 +158,7 @@
         "stringup",
         "struct",
         "svec",
+        "SYNACK",
         "Valgrind",
         "vptr",
         "vtable",
