@@ -7,7 +7,7 @@ struct std
 {
     unsigned int id;
     // char *name;
-    char name[SIZE];
+    char name[SIZE]; // 相当于已经开辟了内存空间，可以直接存放字符串
     /*
     要在结构体中存储字符串时，优先选用字符数组，而不是字符指针
     因为结构体的本意是想要字符串在结构体中占用一定的内存空间，而指针只能存放字符串的地址
