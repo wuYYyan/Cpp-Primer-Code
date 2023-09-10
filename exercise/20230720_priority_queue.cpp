@@ -32,6 +32,11 @@ int main()
     //     cout << i << " ";
     // cout << endl;
 
+    while (heap3.size()) {
+        cout << heap3.top() << endl;
+        heap3.pop();
+    } // heap3是小根堆，所以输出顺序应该是13 51 97
+
     unordered_map<int, int> m;
 
     return 0;

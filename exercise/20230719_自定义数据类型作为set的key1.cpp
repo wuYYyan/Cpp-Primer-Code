@@ -11,6 +11,7 @@ struct Foo
     {
         return val < o.val;
     }
+    // 比较运算符重载函数比较定义为const成员函数，否则会报错
 
     // 不可以使用重载>运算符代替，因为编译会报错
     // bool operator>(const Foo& o) const
