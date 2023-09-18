@@ -63,7 +63,7 @@ int main()
             } else // g[x][y] == 0 成立的情况，直接走到下一个路上
                 q.push(node(x, y, cur.t + 1));
         }
-        if (res) // 只有遇到重点才会更新res，所以当条件成立时就已经到达终点不再走了
+        if (res) // 只有遇到终点才会更新res，所以当条件成立时就已经到达终点不再走了
             break;
     }
     cout << res << endl;
