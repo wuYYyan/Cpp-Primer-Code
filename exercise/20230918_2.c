@@ -6,7 +6,7 @@ int main()
 {
     char str[N];
     // printf("%s", str);
-    scanf("%s", str);
+    scanf("%s", str); // 读取输入的时候末尾不要加换行符，因为输入本身要以换行符来结束
 
     char *p;
     int len = 0;
