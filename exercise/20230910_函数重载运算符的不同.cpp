@@ -7,7 +7,7 @@ struct node {
     node() {}
     node(int x_) : x(x_) {}
     bool operator<(const node &n) const {
-        return x > n.x;
+        return x > n.x; // 返回true时优先级较高
     }
 };
 
@@ -23,7 +23,7 @@ int main()
         auto t = q.top();
         cout << t.x << " ";
         q.pop();
-    } // 3 2 1
+    } // 1 2 3
 
     cout << endl;
 
@@ -34,7 +34,7 @@ int main()
     s.insert(node(3));
 
     for (auto it = s.begin(); it != s.end(); it ++)
-        cout << it->x << " "; // 1 2 3
+        cout << it->x << " "; // 3 2 1
     cout << endl;
     
     return 0;

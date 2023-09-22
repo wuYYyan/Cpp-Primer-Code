@@ -4,6 +4,11 @@
 #include <string>
 // #include <bits/stdc++.h> // 万能头文件
 
+/*
+char op[N];
+scanf("%s", op + 1); // %s后面别加\n，数组名本身就是指针，不再加取地址符
+*/
+
 struct PersonInfo
 {
     string name;

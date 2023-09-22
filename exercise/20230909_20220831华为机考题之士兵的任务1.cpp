@@ -10,7 +10,7 @@ struct node {
     node() { } // 一般情况下，只要提供了含参构造函数就要手动提供一个默认构造函数
     node(int x_, int y_, int t_) : x(x_), y(y_), t(t_) {}
     bool operator<(const node &a) const {
-        return t > a.t;
+        return t > a.t; // 返回为true说明前者的优先级较高，在优先队列中优先级较高的元素会下沉
     }
     // 比较运算符重载函数必须定义为const成员函数，否则会报错
 };

@@ -11,6 +11,7 @@ void change(string &str) {
     for (int i = 0; i < str.size(); i ++)
         if (str[i] >= 'a' && str[i] <= 'z')
             str[i] -= 32; // 在ASCII码表中，相同字母的大小写偏移为32
+    // 这里可以直接使用库函数toupper，改写为str[i] = toupper(str[i]);
 }
 
 bool check(char c) {
