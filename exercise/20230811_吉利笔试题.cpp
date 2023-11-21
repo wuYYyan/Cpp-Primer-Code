@@ -15,7 +15,7 @@ int main()
 
     // Ñ¡ÔñÌâ3
     int arr[3] = {1, 2, 3};
-    cout << a << endl;
+    cout << arr << endl;
     cout << *arr << endl;
     cout << *(arr + 1) << endl;
     cout << arr[0] << endl;
@@ -26,6 +26,5 @@ int main()
     char *p = ch;
     printf("%c", *p + 4); // e
     
-
     return 0;
 }

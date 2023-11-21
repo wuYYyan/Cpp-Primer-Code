@@ -5,6 +5,7 @@
 char *ss(char *s)
 {
     return s + strlen(s) / 2;
+    // 返回指向字符串中间的指针
 }
 
 int main()

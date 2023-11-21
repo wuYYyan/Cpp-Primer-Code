@@ -23,6 +23,7 @@ int main(int argc, char const *argv[])
     D d;
     // std::cout << d.val << std::endl; //编译失败，不知道调用从哪个类中继承的val变量
     d.fun(); 
+    std::cout << d.B::val << std::endl;
 
     return 0;
 }

@@ -1,3 +1,4 @@
+// 力扣原题：https://leetcode.cn/submissions/detail/483489175/
 #include <stdio.h>
 
 int main()
@@ -8,6 +9,7 @@ int main()
     while (a | b != c) {
         int i, j, k;
         i = a & 1, j = b & 1, k = c & 1;
+        // 分别取出a, b, c的最后一位
         if (k == 1) {
             if (i == 0 && j == 0)
                 res ++;

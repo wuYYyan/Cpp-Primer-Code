@@ -29,12 +29,13 @@ int main()
     int len = nums.size();
     sum.resize(len + 1);
     for (int i = 1; i <= len; i ++)
-        sum[i] = sum[i - 1] + nums[i - 1];
+        sum[i] = sum[i - 1] + nums[i - 1]; // 表示在原数组中前n个数的和
 
     // 检查前缀和是否处理正确
     // for (int i = 1; i < len; i ++)
     //     cout << sum[i] << " ";
     
+    // 注意题目说的是正整数数组，只有这样才能使用双指针的做法
     int res = 0;
     for (int i = 1, j = len; i <= j; j --) {
         while (i <= j && sum[j] - sum[i - 1] < target)

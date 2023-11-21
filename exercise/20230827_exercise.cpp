@@ -33,6 +33,7 @@ int main()
     // auto compare1 = [] (const Foo& f1, const Foo& f2) {
     //     return f1.val < f2.val;
     // };
+    
     // set<Foo> s;
     // set<Foo, Comp> s; 
     // set<Foo, greater<Foo>> s;

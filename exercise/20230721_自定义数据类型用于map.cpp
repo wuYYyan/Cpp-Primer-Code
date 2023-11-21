@@ -5,7 +5,7 @@ using namespace std;
 
 struct Foo
 {
-    Foo(int v):val(v){}
+    Foo(int v) : val(v) {}
     int val;
 
     // 返回值为true表示第一个参数的优先级高于第二个参数

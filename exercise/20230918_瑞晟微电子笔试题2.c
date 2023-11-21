@@ -8,7 +8,7 @@ int main()
     // printf("%s", str);
     scanf("%s", str); // 读取输入的时候末尾不要加换行符，因为输入本身要以换行符来结束
 
-    char *p;
+    char *p; // 字符数组名的本质是指向字符的指针常量，所以可以用指针来遍历
     int len = 0;
     for (p = str; *p != '\0'; p = p + 1)
         len ++;

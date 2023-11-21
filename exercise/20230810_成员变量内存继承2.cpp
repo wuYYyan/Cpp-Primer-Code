@@ -9,7 +9,7 @@ class A
         static int y;
 };
 
-int A::y = 5;
+int A::y = 5; // 在类外初始化静态成员变量不再需要static关键字
 
 class B : public A
 {

@@ -12,7 +12,7 @@ int main()
     svec.insert(svec.begin(), "Hello");
     // 将3个元素插入到svec的末尾，并将所有元素都初始化为 string "Anna"
     svec.insert(svec.end(), 3, "Anna");
-    svec.insert(svec.end(), {"wuyan", "WUYAN"});
+    svec.insert(svec.begin(), {"wuyan", "WUYAN"});
     svec.insert(svec.begin(), svec.begin(), svec.end());
     // svec.insert(svec.end(), svec.begin(), svec.end()); //为什么这条语句不起作用？？？
     

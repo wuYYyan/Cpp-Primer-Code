@@ -1,4 +1,4 @@
-// 如果类中含有const成员变量，则该类型的合成默认构造函数被定义为删除的
+// 如果类中含有const成员变量，则该类型的合成默认构造函数被定义为删除的(= delete)
 #include <iostream>
 
 using namespace std;
@@ -16,6 +16,7 @@ class B
     private:
         const int a = x;
         // 可以在类声明中直接初始化const类型的成员变量
+        // 这样所有该类的对象的这个成员变量的值都一样
 };
 
 class C
@@ -28,6 +29,7 @@ class C
 
 // const int C::a = 100;
 // error，非静态数据成员不能在类外部初始化
+// 静态成员变量在类外进行初始化时不再需要static关键字
 
 int main()
 {

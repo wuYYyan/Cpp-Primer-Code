@@ -9,9 +9,9 @@ int main(){
     int a = 0;
     int j = 0;
     int m = 0;
-    while ( m <= n ){
+    while (m <= n){
         a = a + 1; 
-        for (int b = 1 ; b <= a ; b++){
+        for (int b = 1; b <= a; b ++){
              j = j + a;
              m = m + 1;
         }
@@ -29,4 +29,6 @@ int main(){
         k += 1; // k = k + 1;
         sum = sum;
     }
+
+    return 0;
 }

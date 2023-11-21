@@ -25,7 +25,6 @@ public:
         
         readers_++;
     }
-
     void unlockRead() {
         std::unique_lock<std::mutex> lock(mutex_);
 
@@ -45,7 +44,6 @@ public:
 
         writing_ = true; // 标记当前有线程正在写
     }
-
     void unlockWrite() {
         std::unique_lock<std::mutex> lock(mutex_);
 

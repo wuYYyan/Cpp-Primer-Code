@@ -7,13 +7,16 @@ struct node {
     node() {}
     node(int x_) : x(x_) {}
     bool operator<(const node &n) const {
-        return x > n.x; // 返回true时优先级较高
+        // 返回true时优先级较高
+        // return x > n.x; 
+        return x < n.x; 
     }
 };
 
 int main()
 {
     priority_queue<node> q; // 在优先队列中，优先级较高的下沉，优先级较低的上浮
+    // 默认是大根堆，但其实内部重载了<运算符，即较小数的优先级较高下沉，较大数的优先级较低上浮
 
     q.push(node(1));
     q.push(node(2));
@@ -27,7 +30,7 @@ int main()
 
     cout << endl;
 
-    set<node> s;
+    set<node> s; // 在哈希表中，优先级较高的在前面，优先级较低的在后面
 
     s.insert(node(1));
     s.insert(node(2));
