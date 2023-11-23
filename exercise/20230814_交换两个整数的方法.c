@@ -30,6 +30,15 @@ int main()
     b4 = a4 ^ b4;
     a4 = a4 ^ b4;
     printf("4) a4 = %d, b4 = %d\n", a4, b4);
+    // 方法四在数据加密中有应用
+    /*
+    Drive1：1010 0111
+    Drive2：0110 1100
+    Backup：1100 1011（Drive1 xor Drive2）
+
+    当Drive2损坏时，通过Drive1 xor Backup得到Drive2的数据
+    1010 0111 xor 1100 1011 = 0110 1100
+    */
 
     return 0;
 }
