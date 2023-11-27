@@ -35,6 +35,7 @@ int main()
     cout << sizeof(A) << endl; // 8(why?)
     cout << sizeof(B) << endl; // 8(why?)
     cout << sizeof(C) << endl; // 1
+    // 以上关于引用占用内存空间的大小，见程序20231127_引用占用内存空间的大小.cpp
 
     // A a; // error: use of deleted function 'A::A()'
     B b; // ok

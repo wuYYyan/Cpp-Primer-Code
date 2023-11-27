@@ -130,6 +130,7 @@
         "Liskov",
         "logn",
         "lpthread",
+        "memcheck",
         "memfcn",
         "multiset",
         "myref",
