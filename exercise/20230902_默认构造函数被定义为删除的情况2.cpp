@@ -8,7 +8,7 @@ int x = 1;
 class A
 {
     private:
-        int &r; // 引用类型的成员变量在构造函数的初始化列表中进行初始化
+        char &r; // 引用类型的成员变量在构造函数的初始化列表中进行初始化
 };
 
 class B
@@ -35,6 +35,7 @@ int main()
     cout << sizeof(A) << endl; // 8(why?)
     cout << sizeof(B) << endl; // 8(why?)
     cout << sizeof(C) << endl; // 1
+    // 不同类型的引用，所占用的内存空间是一样的！！！
     // 以上关于引用占用内存空间的大小，见程序20231127_引用占用内存空间的大小.cpp
 
     // A a; // error: use of deleted function 'A::A()'
