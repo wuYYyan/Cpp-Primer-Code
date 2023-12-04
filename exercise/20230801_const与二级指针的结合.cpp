@@ -28,7 +28,7 @@ int main()
     */
 
     int a = 10;
-    const int *p = &a; // const int*  <==  int*。正确
+    const int *p = &a; // const int*  <==  int*，正确
     int *q = p;        // int*  <==  const int*，错误
 
     int a = 10;

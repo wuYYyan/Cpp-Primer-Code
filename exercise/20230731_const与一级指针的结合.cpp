@@ -12,7 +12,7 @@ int main()
 
     int a = 10;
     int *p1 = &a;
-    const int *p2 = &a;
+    const int *p2 = &a; // 非const转化为const(从指针的角度看)是合法的
     int * const p3 = &a; //注意p3的类型是int*，而不是int* const
     int *p4 = p3; //合法，因为p3的类型是int*，顶层const不参与修饰类型
 
