@@ -7,8 +7,8 @@ using namespace std;
 template <typename T>
 void print(const T& t)
 {
-    for (typename T::size_type i = 0; i < t.size(); i++)
-        cout << t[i] << " ";
+    for (auto i = t.begin(); i != t.end(); i++)
+        cout << *i << " ";
     cout << endl;
 }
 
