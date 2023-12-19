@@ -1,10 +1,9 @@
 #include <iostream>
-#include <vector>
-#include <list>
+#include <string>
 
 using namespace std;
 
-template <typename T, size_t N>
+template <typename T, size_t N> // 类型参数与非类型参数
 void print(const T (&a)[N])
 {
     // 所传入的容器不一定重载了下标运算符

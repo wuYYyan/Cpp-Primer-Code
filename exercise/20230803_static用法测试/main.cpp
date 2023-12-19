@@ -1,3 +1,4 @@
+// 多文件联合编译并链接：g++ main.cpp test1.cpp test2.cpp
 #include <iostream>
 
 using namespace std;
