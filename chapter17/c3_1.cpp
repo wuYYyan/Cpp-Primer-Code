@@ -7,7 +7,6 @@ using namespace std;
 int main() {
     string str;
 
-    /*
     cout << "Please input your Email address: ";
     cin >> str;
 
@@ -18,16 +17,16 @@ int main() {
         cout << "Valid Email address" << endl;
     else
         cout << "Invalid Email address, please input again" << endl;
-    */
-    cout << "Please input your password" << endl;
-    cin >>str;
 
-    regex reg("^[A-Za-z0-9]+$");
-    bool ret = regex_match(str, reg);
-    if (ret == true)
-        cout << "Valid password" << endl;
-    else
-        cout << "Invalid password, please input again" << endl;
+    // cout << "Please input your password" << endl;
+    // cin >>str;
+
+    // regex reg("^[A-Za-z0-9]+$");
+    // bool ret = regex_match(str, reg);
+    // if (ret == true)
+    //     cout << "Valid password" << endl;
+    // else
+    //     cout << "Invalid password, please input again" << endl;
 
     return 0;
 }
