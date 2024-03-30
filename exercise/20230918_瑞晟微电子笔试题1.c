@@ -6,7 +6,7 @@ int main()
     int a, b, c;
     int res = 0;
     scanf("%d%d%d", &a, &b, &c);
-    while (a | b != c) {
+    while ((a | b) != c) {
         int i, j, k;
         i = a & 1, j = b & 1, k = c & 1;
         // 分别取出a, b, c的最后一位
